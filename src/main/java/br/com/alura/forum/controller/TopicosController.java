@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.Arrays;
 import java.util.List;
@@ -53,7 +54,7 @@ public class TopicosController {
 
 
     @PostMapping//Vai adicionar topicos
-    public ResponseEntity<TopicoDto> cadastrar(@RequestBody TopicoForm form, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<TopicoDto> cadastrar(@RequestBody @Valid TopicoForm form, UriComponentsBuilder uriBuilder) {
 
         Topico topico = form.converter(cursoRepository);
         topicoRepository.save(topico);
@@ -64,6 +65,7 @@ public class TopicosController {
     }
 //    @RequestBody -> corpo da requisição;  é para pegar do corpo da requisição, e
 //    não das URLs, como parâmetro de URL.
+//    @Valid --> Rodar as validações do bean validation
 
 
 }
