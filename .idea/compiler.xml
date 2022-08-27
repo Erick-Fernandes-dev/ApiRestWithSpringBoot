@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="forum" />
         <module name="10_SpringBootAPIREST__ConstruaUmaAPI" />
+        <module name="ApiRestWithSpringBoot" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="10_SpringBootAPIREST__ConstruaUmaAPI" options="-parameters" />
+      <module name="ApiRestWithSpringBoot" options="-parameters" />
       <module name="forum" options="-parameters" />
     </option>
   </component>
